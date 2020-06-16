@@ -10,6 +10,7 @@ async function get(req, res) {
     return resolve(files)
   }))
 
+
   // Read the files and parse the metadata + content
   const postsFrontMatter = await Promise.all(
     posts.map(async post => {
@@ -31,4 +32,4 @@ async function get(req, res) {
   res.end(JSON.stringify(postsFrontMatter))
 }
 
-export default get
+export { get }

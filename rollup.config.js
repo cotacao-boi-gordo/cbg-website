@@ -1,5 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
@@ -18,6 +19,7 @@ export default {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
+                        json(),
 			replace({
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode)
@@ -29,7 +31,8 @@ export default {
 			}),
 			resolve({
 				browser: true,
-				dedupe: ['svelte']
+				dedupe: ['svelte'],
+                                preferBuiltins: false
 			}),
 			commonjs(),
 
