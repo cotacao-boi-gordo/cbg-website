@@ -23,6 +23,7 @@
 <script>
   export let posts
   import { onMount } from 'svelte'
+  import Commodities from '../components/Commodities.svelte'
 
   onMount(() => {
     if (window.netlifyIdentity) {
@@ -66,7 +67,7 @@
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
     padding: 1.5rem;
     width: 80%;
   }
@@ -92,7 +93,6 @@
     text-align: right;
     width: 70%;
   }
-
 </style>
 
 <svelte:head>
@@ -102,13 +102,7 @@
 
 <h1>Cotação Boi Gordo</h1>
 
-<section>
-  <label for="commodity">Escolha uma commodity:</label>
-  <select name="commodity">
-    <option value="boigordo">Boi Gordo</option>
-    <option value="arroz">Arroz</option>
-  </select>
-</section>
+<Commodities/>
 
 <section>
   <h2>Notícias</h2>
