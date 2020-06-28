@@ -15,7 +15,7 @@ const getPrice = doc => {
   return priceElement && priceElement.innerText
 }
 
-const computePrice = async commodity => {
+const fetchPrice = async commodity => {
   if (!commodity) {
     return 0
   }
@@ -24,8 +24,14 @@ const computePrice = async commodity => {
   const res = await fetch(url).then(body => body.text())
   const priceAsText = getPrice(parseHTML(getHTMLContents(res)))
   const priceAsNumber = +priceAsText.replace(/(.)*R\$\s/, '').replace(/,/, '.')
-  return (100 * priceAsNumber) || 0
+  const priceInCents = priceAsNumber ? (100 * priceAsNumber) : 0
+  const status = priceAsNumber ? 'success' : 'failure'
+
+  return {
+    price: priceInCents,
+    status,
+  }
 }
 
 /* eslint-disable-next-line import/prefer-default-export */
-export { computePrice }
+export { fetchPrice }

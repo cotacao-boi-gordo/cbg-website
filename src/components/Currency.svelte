@@ -29,4 +29,10 @@
     .format(amount / 100)
 </script>
 
+<style>
+  input {
+    padding: .5rem;
+  }
+</style>
+
 <input type=tel value={amountAsText} on:keydown={handleKeydown}>

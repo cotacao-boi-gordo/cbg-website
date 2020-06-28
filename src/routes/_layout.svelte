@@ -1,9 +1,9 @@
 <style>
   main {
-    padding: 2em;
+    padding: 1.5rem 3rem;
   }
 </style>
 
 <main>
-	<slot></slot>
+  <slot></slot>
 </main>

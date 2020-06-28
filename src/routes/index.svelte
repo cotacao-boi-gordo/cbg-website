@@ -39,22 +39,6 @@
 </script>
 
 <style>
-  :root {
-    --main-color: rgb(224, 224, 255, 1);
-    --transparent-main-color: rgb(224, 224, 255, 0);
-  }
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
   a {
     align-self: flex-end;
     border: 1px solid black;
@@ -65,14 +49,16 @@
   article {
     background: var(--main-color);
     border-radius: 25px;
+    box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
+    max-width: calc(var(--base-font-size) * 40);
     padding: 1.5rem;
     width: 80%;
   }
 
-  article main {
+  article section {
     --line-size: 1.2rem;
     --number-lines: 6;
     overflow: hidden;
@@ -83,7 +69,7 @@
     text-align: justify;
   }
 
-  article main:after {
+  article section:after {
     background: linear-gradient(to right, var(--transparent-main-color), var(--main-color) 90%);
     bottom: 0rem;
     content: "";
@@ -93,6 +79,15 @@
     text-align: right;
     width: 70%;
   }
+
+  h2 {
+    padding-top: 2rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
 </style>
 
 <svelte:head>
@@ -100,20 +95,22 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>
 
-<h1>Cotação Boi Gordo</h1>
+<div class="content">
+  <h1>Cotação Boi Gordo</h1>
 
-<Commodities/>
+  <Commodities/>
 
-<section>
-  <h2>Notícias</h2>
+  <section>
+    <h2>Notícias</h2>
 
-  {#each posts as post}
-    <article>
-      <h3>{post.title}</h3>
-      <main>
-        {@html post.contents}
-      </main>
-      <a rel='prefetch' href='blog/{post.slug}'>Leia mais</a>
-    </article>
-  {/each}
-</section>
+    {#each posts as post}
+      <article>
+        <h3>{post.title}</h3>
+        <section>
+          {@html post.contents}
+        </section>
+        <a rel='prefetch' href='blog/{post.slug}'>Leia mais</a>
+      </article>
+    {/each}
+  </section>
+</div>
