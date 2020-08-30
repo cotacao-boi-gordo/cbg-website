@@ -11,6 +11,11 @@
   h1 {
     color: #4F8892;
     font-family: 'Merriweather', serif;
+    transition: color 300ms;
+  }
+
+  h1:hover {
+    color: black;
   }
 </style>
 

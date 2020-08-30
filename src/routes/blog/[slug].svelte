@@ -35,7 +35,8 @@
 
 <style>
   h1 {
-    color: var(--main-color);
+    color: #4F8892;
+    margin-top: 3rem;
     padding: 0;
   }
   .datetime {

@@ -55,7 +55,6 @@
     margin-bottom: 2rem;
     max-width: calc(var(--base-font-size) * 40);
     padding: 1.5rem;
-    width: 80%;
   }
 
   article section {
@@ -86,10 +85,6 @@
     border-radius: 1rem;
     }
 
-  .region h2 {
-    color: white;
-  }
-
   .content {
     display: flex;
     flex-direction: column;
@@ -97,7 +92,7 @@
   }
 
   .news {
-    max-width: calc(var(--base-font-size) * 60);
+      max-width: calc(var(--base-font-size) * 45);
   }
 </style>
 

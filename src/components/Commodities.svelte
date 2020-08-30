@@ -33,10 +33,6 @@
     width: 5rem;
   }
 
-  label {
-    color: white;
-  }
-
   select {
     appearance: none;
     -moz-appearance: none;
@@ -47,6 +43,7 @@
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
     border: 1px solid black;
+    border-radius: 1rem;
     padding: .5rem 2rem .5rem .5rem;
   }
 
