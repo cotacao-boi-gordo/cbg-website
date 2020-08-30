@@ -80,13 +80,24 @@
     width: 70%;
   }
 
-  h2 {
-    padding-top: 2rem;
+  .region {
+    background-color: #07B8C5;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    }
+
+  .region h2 {
+    color: white;
   }
 
   .content {
     display: flex;
     flex-direction: column;
+    gap: 3rem;
+  }
+
+  .news {
+    max-width: calc(var(--base-font-size) * 60);
   }
 </style>
 
@@ -96,11 +107,11 @@
 </svelte:head>
 
 <div class="content">
-  <h1>Cotação Boi Gordo</h1>
+  <div class="region">
+    <Commodities/>
+  </div>
 
-  <Commodities/>
-
-  <section>
+  <section class="region news">
     <h2>Notícias</h2>
 
     {#each posts as post}
