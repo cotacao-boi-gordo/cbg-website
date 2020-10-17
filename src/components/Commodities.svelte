@@ -78,8 +78,9 @@
     box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
+    max-width: 30rem;
     padding: 2rem;
-    width: 30rem;
+    width: 90%;
   }
 
   .unit-name {
