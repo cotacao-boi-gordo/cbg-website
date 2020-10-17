@@ -69,6 +69,13 @@
   .mid-text {
     align-items: center;
     display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    .mid-text {
+      flex-direction: row;
+    }
   }
 
   .price-widget {
@@ -81,6 +88,10 @@
     max-width: 30rem;
     padding: 2rem;
     width: 90%;
+  }
+
+  .price-widget h3 {
+    text-align: center;
   }
 
   .unit-name {
